@@ -1,0 +1,117 @@
+name: Update profile artwork
+
+on:
+  schedule:
+    - cron: "17 */12 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: profile-art-main
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    if: github.repository == 'Erzhan-mul/Erzhan-mul'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - name: Check out the profile repository
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          ref: main
+          persist-credentials: true
+
+      - name: Fetch the public contribution streak
+        shell: bash
+        run: |
+          mkdir -p assets/generated
+          curl --fail --silent --show-error --location --retry 2 --retry-all-errors --connect-timeout 15 --max-time 60 \
+            --output assets/generated/streak.svg \
+            'https://streak-stats.demolab.com/?user=Erzhan-mul&hide_border=false&background=08111F&border=164B7A&stroke=164B7A&ring=70D6FF&fire=38BDF8&currStreakLabel=70D6FF&sideLabels=C8EDFF&currStreakNum=C8EDFF&sideNums=C8EDFF&dates=96B5CE&card_width=1180&card_height=210&disable_animations=true'
+
+      - name: Generate public GitHub statistics
+        uses: stats-organization/github-readme-stats-action@2c498845f71017821efaad14293ebc736156ef21 # v2.1.0
+        with:
+          card: stats
+          options: username=Erzhan-mul&show_icons=true&hide_rank=true&hide_border=false&border_radius=8&border_color=164B7A&bg_color=08111F&title_color=70D6FF&icon_color=38BDF8&text_color=C8EDFF&disable_animations=true&card_width=500
+          path: assets/generated/stats.svg
+          core_version: "2.2.1"
+          fail_on_error: "true"
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate repository language statistics
+        uses: stats-organization/github-readme-stats-action@2c498845f71017821efaad14293ebc736156ef21 # v2.1.0
+        with:
+          card: top-langs
+          options: username=Erzhan-mul&layout=compact&langs_count=6&hide_border=false&border_radius=8&border_color=164B7A&bg_color=08111F&title_color=70D6FF&text_color=C8EDFF&disable_animations=true&card_width=500
+          path: assets/generated/languages.svg
+          core_version: "2.2.1"
+          fail_on_error: "true"
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Apply the azure language palette
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import xml.etree.ElementTree as ET
+          path = Path("assets/generated/languages.svg")
+          tree = ET.parse(path)
+          root = tree.getroot()
+          ns = "{http://www.w3.org/2000/svg}"
+          bars = [node for node in root.iter(ns + "rect") if node.get("data-testid") == "lang-progress"]
+          dots = [node for node in root.iter(ns + "circle") if node.get("cx") == "5" and node.get("cy") == "6" and node.get("r") == "5"]
+          if not bars or len(bars) != len(dots):
+              raise SystemExit("Unexpected language-card layout; artwork was not committed.")
+          palette = ("#70D6FF", "#38BDF8", "#1F74B8", "#B2EDFF", "#4093EB", "#19577F")
+          for index, (bar, dot) in enumerate(zip(bars, dots)):
+              color = palette[index % len(palette)]
+              bar.set("fill", color)
+              dot.set("fill", color)
+          ET.register_namespace("", "http://www.w3.org/2000/svg")
+          tree.write(path, encoding="utf-8", xml_declaration=True)
+          PY
+
+      - name: Generate the contribution snake
+        uses: Platane/snk/svg-only@d8f6715049803e982ee5ff501b6b9b7d5deeb09b # v3.5.0
+        with:
+          github_user_name: Erzhan-mul
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          outputs: |
+            assets/generated/snake.svg?palette=github-dark&color_snake=#70D6FF&color_dots=#26344A,#164B7A,#1F74B8,#38BDF8,#B2EDFF
+
+      - name: Verify generated SVG files
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import xml.etree.ElementTree as ET
+          for name in ("streak.svg", "stats.svg", "languages.svg", "snake.svg"):
+              path = Path("assets/generated") / name
+              root = ET.parse(path).getroot()
+              if root.tag != "{http://www.w3.org/2000/svg}svg":
+                  raise SystemExit(f"Invalid SVG: {path}")
+              if name == "streak.svg":
+                  texts = [" ".join("".join(node.itertext()).split()) for node in root.iter("{http://www.w3.org/2000/svg}text")]
+                  required = {"Total Contributions", "Current Streak", "Longest Streak"}
+                  if not required.issubset(texts):
+                      raise SystemExit("Streak endpoint returned an incomplete or error card.")
+                  combined = " ".join(texts).lower()
+                  if any(error in combined for error in ("rate limit", "error", "failed", "could not", "not found")):
+                      raise SystemExit("Streak endpoint returned an API error.")
+          PY
+
+      - name: Commit updated artwork
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add -- assets/generated/streak.svg assets/generated/stats.svg assets/generated/languages.svg assets/generated/snake.svg
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Update profile artwork [skip ci]"
+          git push origin HEAD:main
