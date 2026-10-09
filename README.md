@@ -1,16 +1,25 @@
-## Hi there 👋
+<p align="center">
+  <img src="assets/name-marquee.gif" alt="Muldash Erzhan — animated azure pixel lettering" width="100%">
+</p>
 
-<!--
-**Erzhan-mul/Erzhan-mul** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+<p align="center">
+  <strong>Hi, I'm Erzhan. Welcome to my little corner of GitHub.</strong><br>
+  <sub>PIXELS &nbsp; · &nbsp; BLUE HOUR &nbsp; · &nbsp; IMAGINATION</sub>
+</p>
 
-Here are some ideas to get you started:
+<h3 align="center">A world in pixels</h3>
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+<p align="center">
+  <a href="https://github.com/Erzhan-mul/pixel-world"><img src="assets/pixel-room.png" alt="Pixel World — explore my blue pixel-art website project" width="640"></a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/Erzhan-mul/pixel-world"><strong>Explore Pixel World →</strong></a><br>
+  <sub>A tiny website with a living pixel room, a moving name, and a blue-hour mood.</sub>
+</p>
+
+<p align="center">
+  <a href="https://www.linkedin.com/in/erzhan-muldash-075642430/">LinkedIn</a>
+  &nbsp; · &nbsp;
+  <a href="https://github.com/Erzhan-mul">GitHub</a>
+</p>
