@@ -1,12 +1,5 @@
 <p align="center">
-  <picture>
-    <source media="(prefers-reduced-motion: reduce)" srcset="https://raw.githubusercontent.com/Erzhan-mul/Erzhan-mul/main/assets/portrait-frame.svg">
-    <img src="assets/terminal.svg" alt="Muldash Erzhan — animated azure terminal with a dot portrait and Python, Java, C++ lettering" width="100%">
-  </picture>
-</p>
-
-<p align="center">
-  <a href="https://raw.githubusercontent.com/Erzhan-mul/Erzhan-mul/main/assets/terminal.svg">Play terminal animation ↗</a>
+  <img src="assets/terminal.svg" alt="Muldash Erzhan — animated azure terminal with a dot portrait and Python, Java, C++ lettering" width="100%">
 </p>
 
 <p align="center">
