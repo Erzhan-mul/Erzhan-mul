@@ -3,3 +3,10 @@ Source: https://github.com/IdreesInc/Monocraft
 License: SIL Open Font License 1.1 (see font-license.txt).
 The font is rendered into original raster artwork; no font binary is included.
 Pixel-room illustration: original vector artwork created for this profile.
+
+Azure Night panorama and meteor sprite: created with the built-in imagegen tool for this profile.
+Panorama brief: a wide 3:1 blue pixel-art mountain lake at night, a cyan moon, pine forests,
+and one tiny cabin with an azure window; no text, logos, border, or characters.
+Meteor brief: one transparent pixel shooting star, moving down-right with a cyan head
+and a thin stepped blue tail toward the upper left.
+Animation: three short meteor passes over 12 seconds, with the original landscape fixed.
