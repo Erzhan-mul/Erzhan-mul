@@ -12,5 +12,5 @@ and a thin stepped blue tail toward the upper left.
 Animation: three short meteor passes over 12 seconds, with the original landscape fixed.
 
 Azure Terminal: original native SVG artwork with a point portrait based on the public GitHub avatar.
-Programming language labels are personal details supplied by the profile owner: Python 3, Java, C++.
-Portrait animation uses vector paths and three typographic symbols, not third-party brand logos.
+Technology labels are personal details supplied by the profile owner: Python 3, Java, C++, HTML.
+Portrait animation uses vector paths and four typographic symbols, not third-party brand logos.
