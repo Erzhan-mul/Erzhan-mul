@@ -1,9 +1,9 @@
 <p align="center">
-  <img src="assets/terminal.svg" alt="Muldash Erzhan — animated azure terminal with a dot portrait and Python, Java, C++ lettering" width="100%">
+  <img src="assets/terminal-html.svg" alt="Muldash Erzhan — animated azure terminal with a dot portrait and Python, Java, C++, HTML lettering" width="100%">
 </p>
 
 <p align="center">
-  <strong>Hi, I'm Erzhan — an IT specialist working with Python 3, Java and C++.</strong><br>
+  <strong>Hi, I'm Erzhan — an IT specialist working with Python 3, Java, C++ and HTML.</strong><br>
   <sub>A SMALL WORLD OF PIXELS &nbsp; · &nbsp; BLUE HOUR &nbsp; · &nbsp; IDEAS</sub>
 </p>
 
