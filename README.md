@@ -1,10 +1,30 @@
 <p align="center">
-  <img src="assets/name-marquee.gif" alt="Muldash Erzhan — animated azure pixel lettering" width="100%">
+  <picture>
+    <source media="(prefers-reduced-motion: reduce)" srcset="https://raw.githubusercontent.com/Erzhan-mul/Erzhan-mul/main/assets/portrait-frame.svg">
+    <img src="assets/terminal.svg" alt="Muldash Erzhan — animated azure terminal with a dot portrait and Python, Java, C++ lettering" width="100%">
+  </picture>
 </p>
 
 <p align="center">
-  <strong>Hi, I'm Erzhan. Welcome to my little corner of GitHub.</strong><br>
-  <sub>PIXELS &nbsp; · &nbsp; BLUE HOUR &nbsp; · &nbsp; IMAGINATION</sub>
+  <a href="https://raw.githubusercontent.com/Erzhan-mul/Erzhan-mul/main/assets/terminal.svg">Play terminal animation ↗</a>
+</p>
+
+<p align="center">
+  <strong>Hi, I'm Erzhan — an IT specialist working with Python 3, Java and C++.</strong><br>
+  <sub>A SMALL WORLD OF PIXELS &nbsp; · &nbsp; BLUE HOUR &nbsp; · &nbsp; IDEAS</sub>
+</p>
+
+<h3 align="center">Activity, in azure</h3>
+
+<p align="center">
+  <img src="assets/generated/streak.svg" alt="GitHub contribution streak" width="100%"><br>
+  <img src="assets/generated/stats.svg" alt="Public GitHub statistics" width="49%" align="top">
+  <img src="assets/generated/languages.svg" alt="Languages used in public repositories" width="49%" align="top"><br>
+  <sub>Language proportions reflect code in my public repositories.</sub>
+</p>
+
+<p align="center">
+  <img src="assets/generated/snake.svg" alt="An azure snake exploring my GitHub contributions" width="100%">
 </p>
 
 <h3 align="center">A world in pixels</h3>
@@ -19,7 +39,9 @@
 </p>
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/erzhan-muldash-075642430/">LinkedIn</a>
-  &nbsp; · &nbsp;
-  <a href="https://github.com/Erzhan-mul">GitHub</a>
+  <a href="https://www.linkedin.com/in/erzhan-muldash-075642430/"><img src="assets/badge-linkedin.svg" alt="LinkedIn" height="38"></a>
+  &nbsp;
+  <a href="https://www.instagram.com/erzhan_muldash/"><img src="assets/badge-instagram.svg" alt="Instagram" height="38"></a>
+  &nbsp;
+  <a href="https://github.com/Erzhan-mul/pixel-world"><img src="assets/badge-pixel-world.svg" alt="Pixel World" height="38"></a>
 </p>
