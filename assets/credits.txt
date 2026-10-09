@@ -1,0 +1,5 @@
+Monocraft Regular by Idrees Hassan
+Source: https://github.com/IdreesInc/Monocraft
+License: SIL Open Font License 1.1 (see font-license.txt).
+The font is rendered into original raster artwork; no font binary is included.
+Pixel-room illustration: original vector artwork created for this profile.
