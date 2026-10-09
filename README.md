@@ -10,7 +10,7 @@
 <h3 align="center">A world in pixels</h3>
 
 <p align="center">
-  <a href="https://github.com/Erzhan-mul/pixel-world"><img src="assets/pixel-room.png" alt="Pixel World — explore my blue pixel-art website project" width="640"></a>
+  <a href="https://github.com/Erzhan-mul/pixel-world"><img src="assets/azure-night-stars.gif" alt="Azure Night — blue pixel mountains and a moonlit lake with falling stars" width="100%"></a>
 </p>
 
 <p align="center">
